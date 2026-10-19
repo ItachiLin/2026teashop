@@ -86,8 +86,16 @@
 
   async function refreshOrders() {
     syncStatus.textContent = "正在載入訂單…";
+    let localOrders;
     try {
-      const localOrders = readLocalOrders();
+      localOrders = readLocalOrders();
+    } catch (error) {
+      syncStatus.textContent = error.message;
+      drawOrders([]);
+      return;
+    }
+
+    try {
       const remoteOrders = endpoint ? await window.TeaApi.listOrders(endpoint) : null;
       const allOrders = remoteOrders === null ? localOrders : [...remoteOrders, ...localOrders];
       const unique = new Map();
@@ -98,10 +106,7 @@
         : `已同步試算表 · ${new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })}`;
     } catch (error) {
       syncStatus.textContent = error.message;
-      if (list.childElementCount === 0) {
-        const localOrders = readLocalOrders();
-        drawOrders(localOrders);
-      }
+      drawOrders(localOrders);
     }
   }
 
