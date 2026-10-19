@@ -24,13 +24,9 @@ Apps Script 第一次收到訂單查詢或有效訂單時，會建立名為 `202
 
 ## GitHub Pages 部署
 
-在 GitHub 建立名稱為 `2026teashop` 的公開 repository，將本專案根目錄的網站檔案推送到 `main` 分支。**不要推送 `spec/` 資料夾**。接著到 repository 的「Settings」→「Pages」，將來源設為 `Deploy from a branch`、分支設為 `main`、資料夾設為 `/(root)`。
+公開 repository：[ItachiLin/2026teashop](https://github.com/ItachiLin/2026teashop)。GitHub Pages 從 `main` 分支的根目錄部署。**不要推送 `spec/` 資料夾**。
 
-啟用後的網址會是：
-
-`https://<你的 GitHub 使用者名稱>.github.io/2026teashop/`
-
-GitHub Pages 尚未由本機帳號建立或啟用時，這個網址無法預先確認；請在 repository 的 Pages 設定顯示成功後，將實際網址補到本節。
+網站網址：[https://itachilin.github.io/2026teashop/](https://itachilin.github.io/2026teashop/)
 
 ## 本機測試
 
