@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7ed">
+    <title>目前訂單｜春青手搖飲</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script src="api.js" defer></script>
+    <script src="orders.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="春青手搖飲首頁">
+        <span class="brand-mark" aria-hidden="true">春</span>
+        <span>春青手搖飲<small>CLASS TEA TIME</small></span>
+      </a>
+      <nav aria-label="主要導覽">
+        <a class="nav-link" href="index.html">我要點餐</a>
+        <a class="nav-link nav-link-active" href="orders.html" aria-current="page">目前訂單</a>
+      </nav>
+    </header>
+
+    <main class="page-shell status-page">
+      <section class="status-hero panel">
+        <div>
+          <p class="eyebrow">CLASS ORDER BOARD</p>
+          <h1>大家都點了什麼？</h1>
+          <p>訂單送出後會即時出現在這裡，一起確認沒有漏掉同學的飲料。</p>
+        </div>
+        <div class="status-actions">
+          <span id="sync-status" class="sync-status" role="status">正在載入訂單…</span>
+          <button id="refresh-orders" class="refresh-button" type="button">重新整理</button>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="訂單統計">
+        <article class="summary-card panel"><span>訂單筆數</span><strong id="order-count">0</strong></article>
+        <article class="summary-card panel"><span>飲料總杯數</span><strong id="cup-count">0</strong></article>
+        <article class="summary-card summary-card-total panel"><span>訂單總金額</span><strong id="order-total">NT$ 0</strong></article>
+      </section>
+
+      <section class="orders-panel panel" aria-labelledby="orders-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FRESHLY BREWED</p>
+            <h2 id="orders-heading">班級點餐清單</h2>
+          </div>
+          <a class="text-link" href="index.html">再點一杯 <span aria-hidden="true">→</span></a>
+        </div>
+        <div id="orders-list" class="orders-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">一杯好茶，讓上課日常多一點甜。<span>春青手搖飲 · 班級團購</span></footer>
+  </body>
+</html>
